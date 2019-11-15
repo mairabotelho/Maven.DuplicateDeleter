@@ -1,21 +1,76 @@
 package com.zipcodewilmington.looplabs;
 
+import java.lang.reflect.Array;
+
 /**
  * Created by leon on 1/29/18.
  * @ATTENTION_TO_STUDENTS You are forbidden from modifying the signature of this class.
  */
 public final class IntegerDuplicateDeleter extends DuplicateDeleter<Integer> {
+
+    private Integer[] result;
+
     public IntegerDuplicateDeleter(Integer[] intArray) {
+
         super(intArray);
     }
 
     @Override
     public Integer[] removeDuplicates(int maxNumberOfDuplications) {
-        return new Integer[0];
+
+        int duplicates = 0;
+        int indexNewAray = 0;
+
+        for(Integer index : array){
+
+            if(countOccurences(index) >= maxNumberOfDuplications)
+                duplicates++;
+        }
+
+        result = new Integer[array.length - duplicates];
+
+        for(Integer index : array){
+
+            if(countOccurences(index) < maxNumberOfDuplications) {
+                result[indexNewAray] = index;
+                indexNewAray++;
+            }
+        }
+
+        return result;
     }
 
     @Override
     public Integer[] removeDuplicatesExactly(int exactNumberOfDuplications) {
-        return new Integer[0];
+        int duplicates = 0;
+        int indexNewAray = 0;
+
+        for(Integer index : array){
+
+            if(countOccurences(index) == exactNumberOfDuplications)
+                duplicates++;
+        }
+
+        result = new Integer[array.length - duplicates];
+
+        for(Integer index : array){
+
+            if(countOccurences(index) != exactNumberOfDuplications) {
+                result[indexNewAray] = index;
+                indexNewAray++;
+            }
+        }
+
+        return result;
+    }
+
+    public int countOccurences(int index){
+        int counter = 0;
+
+        for(Integer number : array) {
+            if (index == number)
+                counter++;
+        }
+        return counter;
     }
 }
