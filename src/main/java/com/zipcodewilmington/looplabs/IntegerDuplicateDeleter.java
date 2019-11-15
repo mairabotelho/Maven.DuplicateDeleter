@@ -19,7 +19,7 @@ public final class IntegerDuplicateDeleter extends DuplicateDeleter<Integer> {
     public Integer[] removeDuplicates(int maxNumberOfDuplications) {
 
         int duplicates = 0;
-        int indexNewAray = 0;
+        int indexNewArray = 0;
 
         for(Integer index : array){
 
@@ -32,8 +32,8 @@ public final class IntegerDuplicateDeleter extends DuplicateDeleter<Integer> {
         for(Integer index : array){
 
             if(countOccurences(index) < maxNumberOfDuplications) {
-                result[indexNewAray] = index;
-                indexNewAray++;
+                result[indexNewArray] = index;
+                indexNewArray++;
             }
         }
 
@@ -43,7 +43,7 @@ public final class IntegerDuplicateDeleter extends DuplicateDeleter<Integer> {
     @Override
     public Integer[] removeDuplicatesExactly(int exactNumberOfDuplications) {
         int duplicates = 0;
-        int indexNewAray = 0;
+        int indexNewArray = 0;
 
         for(Integer index : array){
 
@@ -56,8 +56,8 @@ public final class IntegerDuplicateDeleter extends DuplicateDeleter<Integer> {
         for(Integer index : array){
 
             if(countOccurences(index) != exactNumberOfDuplications) {
-                result[indexNewAray] = index;
-                indexNewAray++;
+                result[indexNewArray] = index;
+                indexNewArray++;
             }
         }
 

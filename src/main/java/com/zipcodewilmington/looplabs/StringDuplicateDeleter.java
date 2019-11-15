@@ -17,7 +17,7 @@ public final class StringDuplicateDeleter extends DuplicateDeleter<String> {
     public String[] removeDuplicates(int maxNumberOfDuplications) {
 
         int duplicates = 0;
-        int indexNewAray = 0;
+        int indexNewArray = 0;
 
         for(String s : array){
 
@@ -30,8 +30,8 @@ public final class StringDuplicateDeleter extends DuplicateDeleter<String> {
         for(String s: array){
 
             if(countOccurences(s) < maxNumberOfDuplications) {
-                result[indexNewAray] = s;
-                indexNewAray++;
+                result[indexNewArray] = s;
+                indexNewArray++;
             }
         }
 
@@ -42,7 +42,7 @@ public final class StringDuplicateDeleter extends DuplicateDeleter<String> {
     public String[] removeDuplicatesExactly(int exactNumberOfDuplications) {
 
         int duplicates = 0;
-        int indexNewAray = 0;
+        int indexNewArray = 0;
 
         for(String s : array){
 
@@ -55,8 +55,8 @@ public final class StringDuplicateDeleter extends DuplicateDeleter<String> {
         for(String s: array){
 
             if(countOccurences(s) != exactNumberOfDuplications) {
-                result[indexNewAray] = s;
-                indexNewAray++;
+                result[indexNewArray] = s;
+                indexNewArray++;
             }
         }
 
